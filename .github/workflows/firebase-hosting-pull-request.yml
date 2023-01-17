@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_QMSYSTEM_SUMESH }}'
-          projectId: qmsystem-sumesh
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_QMSYSTEM_A08AC }}'
+          projectId: qmsystem-a08ac
