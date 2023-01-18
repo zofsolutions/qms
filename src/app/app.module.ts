@@ -9,6 +9,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CountdownConfig, CountdownGlobalConfig, CountdownModule } from 'ngx-countdown';
 import { PrintComponent } from './components/samples/print/print.component';
 import { NgxPrintModule } from 'ngx-print';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { TokenService } from './services/token.service';
 
 export function countdownConfigFactory(): CountdownConfig {
   return {};
@@ -26,7 +31,10 @@ export function countdownConfigFactory(): CountdownConfig {
     BrowserModule,
     CarouselModule,
     CountdownModule, 
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [{ provide: CountdownGlobalConfig, useFactory: countdownConfigFactory }],
   bootstrap: [AppComponent]
