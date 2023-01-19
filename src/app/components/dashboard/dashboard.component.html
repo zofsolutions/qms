@@ -107,7 +107,7 @@
 					<div class="row">
 						<div class="col-xs-6 col-lg-6">
 							<div class="list-group">
-								<div class="list-group-item active" (click)="generateToken('registration')">
+								<div class="list-group-item active" (click)="disableButtons ? $event.stopPropagation() : generateToken('registration'); disableButtons ? false : null " [ngClass]="{disableBtnDivs: disableButtons}" >
 									<h2 class="list-group-item-heading">REGISTRATION</h2>
 									<button #registrationPrint printTitle="REGISTRATION TOKEN"
 										printSectionId="print-section-registration" style="display: none;"
@@ -125,7 +125,7 @@
 						</div>
 						<div class="col-xs-6 col-lg-6">
 							<div class="list-group">
-								<div class="list-group-item active" (click)="generateToken('report')">
+								<div class="list-group-item active" (click)="disableButtons ? $event.stopPropagation() : generateToken('report'); disableButtons ? false : null " [ngClass]="{disableBtnDivs: disableButtons}" >
 									<h2 class="list-group-item-heading">REPORT</h2>
 									<button #reportPrint printTitle="REPORT TOKEN" printSectionId="print-section-report"
 										style="display: none;" class="btn btn-primary btn-report" [useExistingCss]="true" [printStyle]="{h1 : {'text-align': 'center'}, h2 : {'text-align': 'center'}, h3 : {'text-align': 'center'}}" ngxPrint>

@@ -15,31 +15,15 @@ import { QmsUtils } from 'src/app/shared/utils/qms-utils';
 export class DashboardComponent implements OnInit {
   token: Token;
   timeStamp:any;
+  disableButtons:boolean=false;
   @ViewChild("reportPrint") reportPrint!: ElementRef;
   @ViewChild("registrationPrint") registrationPrint!: ElementRef;
   constructor(private tokenService: TokenService) {
-
+    this.token = { id: "", date: "", token:"0", timeStamp: new Date(), tokenType: "" };
   }
 
   ngOnInit(): void {
-    // this.countdown.begin();
-    $(document).ready(function () {
-      "use strict";
-      // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-      //  simplyCountdown('.simply-countdown-one', {
-      //   year: d.getFullYear(),
-      //   month: d.getMonth() + 1,
-      //   day: d.getDate()
-      // });
-
-      // //jQuery example
-      // $('#simply-countdown-losange').simplyCountdown({
-      //   year: d.getFullYear(),
-      //   month: d.getMonth() + 1,
-      //   day: d.getDate(),
-      //   enableUtc: false
-      // });
-    });
+   
 
   }
   handleEvent($event: any) {
@@ -49,6 +33,7 @@ export class DashboardComponent implements OnInit {
     el.scrollIntoView();
   }
   generateToken(type: any) {
+    this.disableButtons=true;
     const now = new Date();
     var uniqueID = QmsUtils.makeRandom(8);
     var currentDate = now.toLocaleDateString();
@@ -69,5 +54,6 @@ export class DashboardComponent implements OnInit {
     }else{
       this.registrationPrint.nativeElement.click();
     }
+    this.disableButtons=false;
   }
 }
