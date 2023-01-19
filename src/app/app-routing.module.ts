@@ -6,10 +6,14 @@ import { DisplayComponent } from './components/display/display.component';
 import { PrintComponent } from './components/samples/print/print.component';
 
 const routes: Routes = [
+
+  {path:"",redirectTo:"/dashboard/token",pathMatch:"full"},
+  {path:"dashboard" , component :DashboardComponent,children:[
+    {path:"",redirectTo:"/dashboard/token",pathMatch:"full"},
+    {path:'display',component:DisplayComponent},
+    {path:'token',component:DisplayComponent}
+  ]} 
   // {path:"",component:PrintComponent},
-  {path:"",redirectTo:"/token",pathMatch:"full"},
-  {path:"display",component:DisplayComponent},
-  {path:'token',component:DashboardComponent}
   // {path:"dashboard" , component :DashboardComponent,children:[
     // {path:"",redirectTo:"/dashboard/home",pathMatch:"full"},
     // {path:'blog',component:AocBlogComponent},

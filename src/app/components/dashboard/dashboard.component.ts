@@ -58,6 +58,23 @@ export class DashboardComponent implements OnInit {
   }
 
   findCounterName(){
-    
+
+  }
+  onActivate(componentRef:any) {
+    // (componentRef instanceof VendorListComponent) ? this.toggleAddVendorBtn = false : this.toggleAddVendorBtn = true;
+    // (componentRef instanceof HomePageComponent) ? this.togglePageInfo = false : this.togglePageInfo = true;
+    // (componentRef instanceof BlogListComponent) ? this.breadcrumbTxt = "Blog" : this.breadcrumbTxt=this.breadcrumbTxt;
+    // (componentRef instanceof ContactUsComponent) ? this.breadcrumbTxt = "Contact Us" : this.breadcrumbTxt = this.breadcrumbTxt;
+    // (componentRef instanceof AddQualityReportComponent) ? this.breadcrumbTxt = "Quality Report" : this.breadcrumbTxt = this.breadcrumbTxt;
+    // (componentRef instanceof AddStockDetailsComponent) ? this.breadcrumbTxt = "Stock Details" : this.breadcrumbTxt = this.breadcrumbTxt;
+    // // setTimeout(() => {
+    // //   this.sidebarCloseBtn.nativeElement.click();
+    // //   }, 200);
+
+    //   if(componentRef instanceof AddStockDetailsComponent || componentRef instanceof AddQualityReportComponent){
+    //     this.enableWhatsappFixed=false
+    //   }else{
+    //     this.enableWhatsappFixed=true
+    //   }
   }
 }

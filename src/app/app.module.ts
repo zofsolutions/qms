@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { TokenService } from './services/token.service';
 import { DisplayComponent } from './components/display/display.component';
+import { TokenComponent } from './components/token/token.component';
 
 export function countdownConfigFactory(): CountdownConfig {
   return {};
@@ -26,7 +27,8 @@ export function countdownConfigFactory(): CountdownConfig {
     DashboardComponent,
     HomeComponent,
     PrintComponent,
-    DisplayComponent
+    DisplayComponent,
+    TokenComponent
   ],
   imports: [
     NgxPrintModule,
