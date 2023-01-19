@@ -107,14 +107,16 @@
 					<div class="row">
 						<div class="col-xs-6 col-lg-6">
 							<div class="list-group">
-								<a href="#" class="list-group-item active">
-									<button printSectionId="print-section-registration" class="btn btn-primary btn-registration"
-										ngxPrint>
-										<h4 class="list-group-item-heading">REGISTRATION</h4>
+								<div class="list-group-item active" (click)="generateToken('registration')">
+									<h2 class="list-group-item-heading">REGISTRATION</h2>
+									<button #registrationPrint printTitle="REGISTRATION TOKEN"
+										printSectionId="print-section-registration" style="display: none;"
+										class="btn btn-primary btn-registration" [useExistingCss]="true" [printStyle]="{h1 : {'text-align': 'center'}, h2 : {'text-align': 'center'}, h3 : {'text-align': 'center'}}" ngxPrint>
+										
 									</button>
-									
+
 									<!-- <p class="list-group-item-text">...</p> -->
-								</a>
+								</div>
 								<a href="#" class="list-group-item ">
 									<h4 class="list-group-item-heading">Arabic</h4>
 									<!-- <p class="list-group-item-text">...</p> -->
@@ -123,13 +125,14 @@
 						</div>
 						<div class="col-xs-6 col-lg-6">
 							<div class="list-group">
-								<a href="#" class="list-group-item active">
-									<button printSectionId="print-section-report" class="btn btn-primary btn-report"
-										ngxPrint>
-										<h4 class="list-group-item-heading">REPORT</h4>
+								<div class="list-group-item active" (click)="generateToken('report')">
+									<h2 class="list-group-item-heading">REPORT</h2>
+									<button #reportPrint printTitle="REPORT TOKEN" printSectionId="print-section-report"
+										style="display: none;" class="btn btn-primary btn-report" [useExistingCss]="true" [printStyle]="{h1 : {'text-align': 'center'}, h2 : {'text-align': 'center'}, h3 : {'text-align': 'center'}}" ngxPrint>
+
 									</button>
 									<!-- <p class="list-group-item-text">...</p> -->
-								</a>
+								</div>
 								<a href="#" class="list-group-item ">
 									<h4 class="list-group-item-heading">Arabic</h4>
 									<!-- <p class="list-group-item-text">...</p> -->
@@ -137,21 +140,26 @@
 							</div>
 						</div>
 					</div>
-					<div id="print-section-registration" style="display: none;">
-						<h1>AL SHH MEDICAL LAB</h1>
-						<h1>REGISTRATION</h1>
+					<div id="print-section-registration" style="display: none;text-align: center;">
+						<h1>AL SHUMOOS MEDICAL LAB</h1>
+						<hr>
+						<h1><u>REGISTRATION</u></h1>
 						<h2>Your token number is</h2>
-						<h1> 1234</h1>
-						<h3> Blah Blah Blah</h3>
-						<h3> Blah Blah Blah</h3>
+						<h1> {{token.token}}</h1>
+						<h3> Current Awaiting Token(s) : 4</h3>
+						<h3> <b>Please wait you will be served soon.</b></h3>
+						<hr>
+						{{timeStamp}}
 					</div>
 					<div id="print-section-report" style="display: none;">
-						<h1>AL SHH MEDICAL LAB</h1>
-						<h1>REPORTS</h1>
+						<h1>AL SHUMOOS MEDICAL LAB</h1>
+						<h1><u>REPORTS</u></h1>
 						<h2>Your token number is</h2>
-						<h1> 1234</h1>
-						<h3> Blah Blah Blah</h3>
-						<h3> Blah Blah Blah</h3>
+						<h1> {{token.token}}</h1>
+						<h3> Current Awaiting Token(s) : 4</h3>
+						<h3> <b>Please wait you will be served soon.</b></h3>
+						<hr>
+						{{timeStamp}}
 					</div>
 				</div>
 				<div class="row">
