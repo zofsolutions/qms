@@ -4,4 +4,6 @@ export class Token {
     tokenType:string;
     token:string;
     date:string;
+    isServed:boolean;
+    counterName:string;
 }

@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild("reportPrint") reportPrint!: ElementRef;
   @ViewChild("registrationPrint") registrationPrint!: ElementRef;
   constructor(private tokenService: TokenService) {
-    this.token = { id: "", date: "", token:"0", timeStamp: new Date(), tokenType: "" };
+    this.token = { id: "", date: "", token:"0", timeStamp: new Date(), tokenType: "",isServed:false,counterName:"" };
   }
 
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
         token = parseInt(lastToken) + 1;
       }
     }
-    this.token = { id: uniqueID, date: currentDate, token:token, timeStamp: new Date(), tokenType: type };
+    this.token = { id: uniqueID, date: currentDate, token:token, timeStamp: new Date(), tokenType: type,isServed:false,counterName:"" };
     this.tokenService.saveToken(this.token);
     sessionStorage.setItem("Last Unique ID_" + type, uniqueID);
     sessionStorage.setItem(currentDate + "_" + type, token);
@@ -55,5 +55,9 @@ export class DashboardComponent implements OnInit {
       this.registrationPrint.nativeElement.click();
     }
     this.disableButtons=false;
+  }
+
+  findCounterName(){
+    
   }
 }
