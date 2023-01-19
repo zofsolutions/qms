@@ -41,7 +41,7 @@ export function countdownConfigFactory(): CountdownConfig {
     AngularFireDatabaseModule,
     AngularFireStorageModule
   ],
-  providers: [{ provide: CountdownGlobalConfig, useFactory: countdownConfigFactory },{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [{ provide: CountdownGlobalConfig, useFactory: countdownConfigFactory }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

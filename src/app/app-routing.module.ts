@@ -5,13 +5,16 @@ import { DisplayComponent } from './components/display/display.component';
 import { TokenComponent } from './components/token/token.component';
 
 const routes: Routes = [
-  {path:"",redirectTo:"/dashboard",pathMatch:"full"},
-  {path:"dashboard" , component :DashboardComponent,children:[
-    {path:"",redirectTo:"/dashboard/token",pathMatch:"full"},
-    {path:'display',component:DisplayComponent},
-    {path:'token',component:TokenComponent},
-    {path:'**',component:DashboardComponent}
-  ]} 
+  {path:"",component:DashboardComponent},
+  {path:'token',component:DashboardComponent},
+  {path:'display',component:DisplayComponent},
+  {path:'**',component:DashboardComponent}
+  // {path:"dashboard" , component :DashboardComponent,children:[
+  //   {path:"",redirectTo:"/dashboard/token",pathMatch:"full"},
+  //   {path:'display',component:DisplayComponent},
+  //   {path:'token',component:TokenComponent},
+  //   {path:'**',component:DashboardComponent}
+  // ]} 
 ];
 
 @NgModule({
