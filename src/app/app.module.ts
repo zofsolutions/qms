@@ -16,6 +16,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { TokenService } from './services/token.service';
 import { DisplayComponent } from './components/display/display.component';
 import { TokenComponent } from './components/token/token.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function countdownConfigFactory(): CountdownConfig {
   return {};
@@ -40,7 +41,7 @@ export function countdownConfigFactory(): CountdownConfig {
     AngularFireDatabaseModule,
     AngularFireStorageModule
   ],
-  providers: [{ provide: CountdownGlobalConfig, useFactory: countdownConfigFactory }],
+  providers: [{ provide: CountdownGlobalConfig, useFactory: countdownConfigFactory },{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
